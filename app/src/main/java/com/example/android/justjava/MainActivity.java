@@ -1,5 +1,4 @@
 package com.example.android.justjava;
-
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
@@ -10,7 +9,7 @@ import android.icu.text.NumberFormat;
  * This app displays an order form to order coffee.
  */
 public class MainActivity extends Activity {
-
+    int numberOfCoffees = 1000;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -18,12 +17,30 @@ public class MainActivity extends Activity {
     }
 
     /**
+     * This method is when the plus button is clicked
+     */
+
+    public void increment(View view) {
+        numberOfCoffees = numberOfCoffees + 1;
+        display(numberOfCoffees);
+    }
+
+    /**
+     * This method is when the minus button is clicked
+     */
+
+    public void decrement(View view) {
+        numberOfCoffees = numberOfCoffees - 1;
+        display(numberOfCoffees);
+    }
+
+
+    /**
      * This method is called when the order button is clicked.
      */
     public void submitOrder(View view) {
-
-        display(2);
-        displayPrice(2*5);
+        display(numberOfCoffees);
+        displayPrice(numberOfCoffees*5);
     }
 
     /**
